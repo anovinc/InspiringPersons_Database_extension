@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.inspiringpersons.PreferencesManager
 import com.example.inspiringpersons.persistence.InspiringPersonDao
 import com.example.inspiringpersons.persistence.InspiringPersonsDatabaseBuilder
 import com.example.inspiringpersons.persistence.InspiringPersonsRepository
@@ -18,6 +19,7 @@ class InspiringPersonsListActivity : AppCompatActivity() , OnInspiringPersonSele
     private lateinit var inspiringPersonsBinding : ActivityInspiringPersonsListBinding
     private lateinit var listener:OnInspiringPersonSelected
     private var adapter = InspiringPersonsAdapter(this)
+    private  var initialRun : Boolean = false
     private val personRepository : InspiringPersonDao by lazy {
         InspiringPersonsDatabaseBuilder.getInstance().inspiringPersonDao()
 
@@ -27,17 +29,22 @@ class InspiringPersonsListActivity : AppCompatActivity() , OnInspiringPersonSele
         super.onCreate(savedInstanceState)
         inspiringPersonsBinding = ActivityInspiringPersonsListBinding.inflate(layoutInflater)
         setContentView(inspiringPersonsBinding.root)
+        PreferencesManager().saveState(initialRun)
         setupRecycler()
-        //initalPersons()
+        initalPersons()
     }
 
-    private fun initalPersons(){
-        val person1 = InspiringPersonsRepository.getInspiringPerson("Ada Lovelace")
-        val person2 = InspiringPersonsRepository.getInspiringPerson("Larry Page")
-        val person3 = InspiringPersonsRepository.getInspiringPerson("Steve Jobs")
-        personRepository.insert(person1)
-        personRepository.insert(person2)
-        personRepository.insert(person3)
+    private fun initalPersons() {
+        if (PreferencesManager().getState()) {
+            val person1 = InspiringPersonsRepository.getInspiringPerson("Ada Lovelace")
+            val person2 = InspiringPersonsRepository.getInspiringPerson("Larry Page")
+            val person3 = InspiringPersonsRepository.getInspiringPerson("Steve Jobs")
+            personRepository.insert(person1)
+            personRepository.insert(person2)
+            personRepository.insert(person3)
+        }
+        initialRun=false
+
     }
 
     override fun onResume() {
