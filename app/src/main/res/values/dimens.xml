@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bigPadding">16dp</dimen>
+    <dimen name="smallPadding">4dp</dimen>
+    <dimen name="mediumPadding">8dp</dimen>
+    <dimen name="photoWidth">150dp</dimen>
+    <dimen name="photoHeight">120dp</dimen>
+    <dimen name="mediumMargin">8dp</dimen>
+    <dimen name="smallMargin">4dp</dimen>
+    <dimen name="bigMargin">32dp</dimen>
+    <dimen name="personNameFont">18sp</dimen>
+    <dimen name="personDetailsFont">14sp</dimen>
+
+
+
+
+</resources>

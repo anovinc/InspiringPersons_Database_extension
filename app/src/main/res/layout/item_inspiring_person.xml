@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/smallMargin"
+    android:background="#ffffff"
+    android:layout_marginBottom="@dimen/mediumMargin"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:id="@+id/iv_inspiring_person"
+        android:layout_width="@dimen/photoWidth"
+        android:layout_height="@dimen/photoHeight"
+        tools:src="@tools:sample/avatars"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_name_inspiring_person"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textSize="@dimen/personNameFont"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textAlignment="center"
+        android:layout_marginLeft="@dimen/smallMargin"
+        android:layout_marginRight="@dimen/smallMargin"
+        android:layout_marginBottom="@dimen/smallMargin"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_inspiring_person"
+        tools:text="@tools:sample/full_names"/>
+
+    <ImageButton
+        android:id="@+id/btn_deletePerson"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:background="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_delete_black_24dp"
+        android:layout_height="0dp"></ImageButton>
+
+    <TextView
+        android:id="@+id/tv_lifetime_inspiring_person"
+        android:layout_width="wrap_content"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_inspiring_person"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_name_inspiring_person"
+        tools:text="@tools:sample/lorem"
+        />
+
+    <TextView
+        android:id="@+id/tv_details_inspiring_person"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/smallMargin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textAlignment="center"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/smallMargin"
+        android:textSize="@dimen/personDetailsFont"
+        app:layout_constraintStart_toEndOf="@id/iv_inspiring_person"
+        app:layout_constraintTop_toBottomOf="@id/tv_lifetime_inspiring_person"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="@tools:sample/lorem/random"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

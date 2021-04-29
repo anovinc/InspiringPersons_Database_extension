@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/bigPadding"
+    android:layout_height="match_parent">
+
+    <EditText
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/et_new_inspiring_person_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/mediumMargin"
+        android:hint="@string/Enter_newPersonName"
+        android:textAlignment="center"/>
+    <EditText
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_new_inspiring_person_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/et_new_inspiring_person_lifetime"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/mediumMargin"
+        android:layout_height="wrap_content"
+        android:hint="@string/lifetime"
+        android:textAlignment="center"/>
+    <EditText
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_new_inspiring_person_lifetime"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/et_new_inspiring_person_details"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:hint="@string/details"
+        android:textAlignment="center"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_new_inspiring_person_details"
+        android:id="@+id/et_new_inspiring_person_picture"
+        android:hint="@string/URL_for_persons_photo"
+        android:textAlignment="center"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/et_new_inspiring_person_picture"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/bigMargin"
+        android:id="@+id/et_new_inspiring_person_quote1"
+        android:hint="@string/quote"
+        android:textAlignment="viewStart"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/et_new_inspiring_person_quote1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/smallMargin"
+        android:id="@+id/et_new_inspiring_person_quote2"
+        android:hint="@string/quote"
+        android:textAlignment="viewStart"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/et_new_inspiring_person_quote2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/smallMargin"
+        android:id="@+id/et_new_inspiring_person_quote3"
+        android:hint="@string/quote"
+        android:textAlignment="viewStart"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:textColor="#ffffff"
+        android:background="@color/colorButton"
+        android:id="@+id/bt_save_new_inspiring_person"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"></Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
